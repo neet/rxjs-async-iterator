@@ -8,23 +8,23 @@ describe('toAsyncIterable', () => {
   const NUMBER_OBSERVABLE: Observable<number> = from(NUMBERS);
   const TEST_ERROR = new Error('Test');
 
-  describe('iteration', () => {
+  // describe('iteration', () => {
 
-    it.each([
-      ['sync', NUMBER_OBSERVABLE],
-      ['async', scheduled(NUMBER_OBSERVABLE, asyncScheduler)],
-      ['delayed', NUMBER_OBSERVABLE.pipe(delay(10))],
-    ] as any)('should iterate %s observable', async (type: string, obs: Observable<number>) => {
-      const collected: unknown[] = [];
+  //   it.each([
+  //     ['sync', NUMBER_OBSERVABLE],
+  //     ['async', scheduled(NUMBER_OBSERVABLE, asyncScheduler)],
+  //     ['delayed', NUMBER_OBSERVABLE.pipe(delay(10))],
+  //   ] as any)('should iterate %s observable', async (type: string, obs: Observable<number>) => {
+  //     const collected: unknown[] = [];
 
-      for await (const value of toAsyncIterable(obs)) {
-        collected.push(value);
-      }
+  //     for await (const value of toAsyncIterable(obs)) {
+  //       collected.push(value);
+  //     }
 
-      expect(collected).toEqual(NUMBERS);
-    });
+  //     expect(collected).toEqual(NUMBERS);
+  //   });
 
-  });
+  // });
 
   describe('abrupt completion', () => {
 
