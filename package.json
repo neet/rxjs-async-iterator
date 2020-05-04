@@ -1,5 +1,5 @@
 {
-  "name": "rxjs-async-iterator",
+  "name": "@neetshin/rxjs-async-iterator",
   "version": "1.0.1",
   "description": "Converts async iterators from RxJS observables to consume in for-await-of loops",
   "license": "Apache-2.0",
